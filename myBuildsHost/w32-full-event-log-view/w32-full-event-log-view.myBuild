@@ -1,0 +1,48 @@
+#!/bin/sh
+
+wikipage=""
+homepage="https://www.nirsoft.net/utils/full_event_log_view.html"
+checksum=""
+
+filename="FullEventLogView"
+extension=".exe"
+nut="https://www.nirsoft.net/utils/fulleventlogview.zip"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	unzip "fulleventlogview.zip"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+
+	cd "${myBuildExtractDest}"
+
+	cp "${filename}${extension}" /root/.wine/drive_c
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0" "$2"
+fi

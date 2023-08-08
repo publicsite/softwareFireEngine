@@ -1,0 +1,51 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/Kaspersky_Lab"
+homepage="https://portableapps.com/apps/security/kaspersky-tdsskiller-portable"
+checksum=""
+
+filename="KasperskyTDSSKillerPortable_3.1.0.28_English_online.paf"
+extension=".exe"
+nut="https://portableapps.com/redirect/?a=KasperskyTDSSKillerPortable&s=s&d=pa&f=${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	mv "${myBuildExtractDest}/"*"${filename}${extension}" "${myBuildExtractDest}/${filename}${extension}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+
+	cp "${myBuildExtractDest}/${filename}${extension}" "${1}"
+
+	cd "${1}"
+
+	wine ${filename}${extension}
+
+	rm ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0" "$2"
+fi

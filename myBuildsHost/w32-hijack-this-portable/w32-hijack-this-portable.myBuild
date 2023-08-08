@@ -1,0 +1,51 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/HijackThis"
+homepage="https://portableapps.com/apps/security/hijackthis-portable"
+checksum=""
+
+filename="HijackThisPortable_2.10.0.10.paf"
+extension=".exe"
+nut="https://portableapps.com/redirect/?a=HijackThisPortable&s=s&d=pa&f=${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	mv "${myBuildExtractDest}/"*"${filename}${extension}" "${myBuildExtractDest}/${filename}${extension}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+
+	cp "${myBuildExtractDest}/${filename}${extension}" "${1}"
+
+	cd "${1}"
+
+	wine ${filename}${extension}
+
+	rm ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0" "$2"
+fi

@@ -1,0 +1,7 @@
+Run htop to read amount of Mem
+
+Then run ...
+
+	memtester 200M 1
+
+to run a memtester command for memory size 200 M for 1 iteration.

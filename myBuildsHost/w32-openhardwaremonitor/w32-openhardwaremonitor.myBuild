@@ -1,0 +1,47 @@
+#!/bin/sh
+
+wikipage="<none>"
+homepage="https://openhardwaremonitor.org/"
+checksum=""
+
+filename="openhardwaremonitor-v0.9.6"
+extension=".exe"
+nut="https://openhardwaremonitor.org/files/${filename}.zip"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	unzip "${filename}.zip"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

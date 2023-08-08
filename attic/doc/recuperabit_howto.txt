@@ -1,0 +1,4 @@
+
+	Run:
+
+	python3 /recuperabit/RecuperaBit/main.py <image file>

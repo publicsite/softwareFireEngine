@@ -1,0 +1,47 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/GMER"
+homepage="http://gmer.net/"
+checksum="E8A3E804A96C716A3E9B69195DB6FFB0D33E2433AF871E4D4E1EAB3097237173" #256
+
+filename="gmer"
+extension=".zip"
+nut="http://www2.gmer.net/${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	cd ${myBuildExtractDest}
+	unzip ${filename}${extension}
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}.exe
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

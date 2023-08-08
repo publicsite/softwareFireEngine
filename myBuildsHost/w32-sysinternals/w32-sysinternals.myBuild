@@ -1,0 +1,48 @@
+#!/bin/sh
+
+wikipage=""
+homepage="https://learn.microsoft.com/en-us/sysinternals/downloads/"
+checksum=""
+
+filename="SysinternalsSuite"
+extension=".exe"
+nut="https://download.sysinternals.com/files/${filename}.zip"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	mkdir sysinternals
+	"${myBuildHelpersDir}"/myBuildExtract.sh "${myBuildExtractDest}/${filename}.zip" "${myBuildExtractDest}/sysinternals"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

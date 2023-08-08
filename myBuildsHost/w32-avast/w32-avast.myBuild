@@ -1,0 +1,46 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/Avast_Antivirus"
+homepage="https://www.avast.com/"
+checksum=""
+
+filename="avast_one_essential_setup_online"
+extension=".exe"
+nut="https://bits.avcdn.net/productfamily_ANTIVIRUS/insttype_ONE_FREE/platform_WIN/installertype_ONLINE/build_RELEASE/cookie_mmm_aon_007_999_z5l_m:dlid_AVAST-ONE-FREE-WIN-HP"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	mv "${myBuildExtractDest}/cookie_mmm_aon_007_999_z5l_m:dlid_AVAST-ONE-FREE-WIN-HP" "${myBuildExtractDest}/${filename}${extension}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

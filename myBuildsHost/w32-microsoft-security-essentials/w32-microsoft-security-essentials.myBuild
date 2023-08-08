@@ -1,0 +1,45 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/Microsoft_Security_Essentials"
+homepage="https://www.microsoft.com/en-us/download/details.aspx?id=5201"
+checksum=""
+
+filename="MSEInstall"
+extension=".exe"
+nut="https://download.microsoft.com/download/A/3/8/A38FFBF2-1122-48B4-AF60-E44F6DC28BD8/ENUS/x86/${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

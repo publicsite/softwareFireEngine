@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=WhatInStartup
+Exec=wine-stable /root/.wine/drive_c/WhatInStartup.exe
+Type=Application
+

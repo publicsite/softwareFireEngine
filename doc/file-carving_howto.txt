@@ -1,0 +1,40 @@
+Run photorec on the medium
+
+	sudo photorec /dev/sdb
+
+You can then run
+
+	/root/Desktop/doc/sort-file-carved.sh <photorec-output> <sort-output>
+
+To sort the unstructured media. The sort output is then chowned to your user.
+
+
+
+
+
+===NOTES ABOUT THE SORTER===
+
+For Audio files ...
+ffprobe is used to get Title of music, which is used as the title name for audio files.
+ffprobe is used also to get Artist of music, which is used as the outer directory structure within audio subfolder
+ffprobe is also used to to get Album of music, which is used as the inner directory structure within audio subfolder
+
+For Video ...
+Video is sorted by file extension into the video subfolder
+
+For Images ...
+Images are stored in the images folder
+	Within that folder ...
+		Raster images are stored in the raster folder, and are sorted by file extension
+		Vector images are stored in the vector folder, and are sorted by file extension
+		3D Vector files are stored in the 3d-vector folder, and are sorted by file extension
+		Stereo images are stored in the stereo folder, and are sorted by file extension
+
+For Documents ...
+Documents are stored by file extension into the documents subfolder
+
+For Archives ...
+Archives are stored by file extension in the archives subfolder
+		
+For Everything else
+Everything else is stored by file extension in the unkown-format subfolder

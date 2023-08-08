@@ -1,0 +1,48 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/Revo_Uninstaller"
+homepage="https://www.revouninstaller.com/"
+checksum=""
+
+filename="RevoUninstaller_Portable"
+extension=".exe"
+nut="https://download.revouninstaller.com/download/${filename}.zip"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	mkdir revo-uninstaller
+	"${myBuildHelpersDir}"/myBuildExtract.sh "${myBuildExtractDest}/${filename}.zip" "${myBuildExtractDest}/revo-uninstaller"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}/revo-uninstaller/RevoUninstaller_Portable/"
+
+	wine RevoUPort${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

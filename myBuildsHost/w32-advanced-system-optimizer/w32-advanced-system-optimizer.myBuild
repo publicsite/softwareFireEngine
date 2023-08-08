@@ -1,0 +1,47 @@
+#!/bin/sh
+
+wikipage=""https://en.wikipedia.org/wiki/Advanced_System_Optimizer
+homepage="https://www.systweak.com/advanced-system-optimizer"
+checksum=""
+
+filename="aso3setup_direct-_pd_dl"
+extension=".exe"
+nut="https://cdn.systweak.com/setups/baps/${filename}${extension}?of=aso3setup${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	mv "${myBuildExtractDest}/${filename}${extension}?of=aso3setup${extension}" "${myBuildExtractDest}/${filename}${extension}"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

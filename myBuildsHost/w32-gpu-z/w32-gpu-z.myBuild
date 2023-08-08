@@ -1,0 +1,57 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/GPU-Z"
+homepage="https://www.techpowerup.com/download/techpowerup-gpu-z"
+checksum="F41410525DE218ED85535D630D8503D9"
+
+filename="GPU-Z.2.43.0"
+extension=".exe"
+nut="https://us4-dl.techpowerup.com/files/08uZR0U0td-phz3IkKg7Wg/1639629357/${filename}${extension}"
+nut2="https://us6-dl.techpowerup.com/files/JzdD5fuL4G44MwC7c43IcQ/1639629491/${filename}${extension}"
+nut3="https://us5-dl.techpowerup.com/files/qF8pnmY9QWISVRa-L8wyCQ/1639629524/${filename}${extension}"
+nut4="https://us2-dl.techpowerup.com/files/vxO5k_x2dqVDk4tnLErD8g/1639629552/${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	if ! [ -f "${myBuildExtractDest}/${filename}${extension}" ]; then
+		"${myBuildHelpersDir}"/myBuildGet.sh "${nut2}" "${myBuildExtractDest}"
+	fi
+	if ! [ -f "${myBuildExtractDest}/${filename}${extension}" ]; then
+		"${myBuildHelpersDir}"/myBuildGet.sh "${nut3}" "${myBuildExtractDest}"
+	fi
+	if ! [ -f "${myBuildExtractDest}/${filename}${extension}" ]; then
+		"${myBuildHelpersDir}"/myBuildGet.sh "${nut4}" "${myBuildExtractDest}"
+	fi
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

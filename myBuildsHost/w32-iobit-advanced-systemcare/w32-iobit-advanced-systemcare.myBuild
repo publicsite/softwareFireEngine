@@ -1,0 +1,45 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/IObit_Malware_Fighter"
+homepage="https://www.iobit.com/en/advancedsystemcarefree.php"
+checksum=""
+
+filename="advanced-systemcare-setup"
+extension=".exe"
+nut="https://cdn.iobit.com/dl/${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

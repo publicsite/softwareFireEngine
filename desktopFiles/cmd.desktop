@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=cmd
+Exec=xfce4-terminal -H -e "sh -c \"wine-stable cmd\""
+Type=Application
+

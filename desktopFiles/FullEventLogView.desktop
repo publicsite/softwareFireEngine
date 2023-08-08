@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=FullEventLogView
+Exec=wine-stable /root/.wine/drive_c/FullEventLogView.exe
+Type=Application
+

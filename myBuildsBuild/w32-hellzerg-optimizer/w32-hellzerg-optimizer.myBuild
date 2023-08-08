@@ -1,0 +1,46 @@
+#!/bin/sh
+
+wikipage=""
+homepage="https://github.com/hellzerg/optimizer"
+checksum=""
+
+filename="EZPCFix-1-0-0-16"
+extension=".exe"
+nut="https://github.com/hellzerg/optimizer/archive/refs/heads/master.zip"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildSourceDest}"
+	mv "${myBuildSourceDest}/master.zip" "${myBuildSourceDest}/hellzerg-optimizer.zip"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	"${myBuildHelpersDir}"/myBuildExtract.sh "${myBuildSourceDest}/hellzerg-optimizer.zip" "${myBuildExtractDest}"
+	return 1
+}
+
+do_build(){
+	cd "${myBuildExtractDest}/optimizer-master"
+	xbuild Optimizer.slnreturn 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}/optimizer-master"
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

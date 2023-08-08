@@ -1,0 +1,47 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/Ccleaner"
+homepage="https://www.ccleaner.com/ccleaner"
+checksum=""
+
+filename="ccsetup587"
+extension=".exe"
+nut="https://bits.avcdn.net/productfamily_CCLEANER/insttype_FREE/platform_WIN_PIR/installertype_ONLINE/build_RELEASE/cookie_mmm_ccl_008_999_a5l_m"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	mv "${myBuildExtractDest}/cookie_mmm_ccl_008_999_a5l_m" "${myBuildExtractDest}/${filename}${extension}"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

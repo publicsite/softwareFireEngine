@@ -1,0 +1,5 @@
+The log files are usually stored in
+
+C:\windows\system32\winevt\Logs
+
+You can read them with the evtxexport command

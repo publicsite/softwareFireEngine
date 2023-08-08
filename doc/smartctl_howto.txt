@@ -1,0 +1,7 @@
+The general flow is ...
+
+sudo smartctl -H /dev/sda
+sudo smartctl -t short /dev/sda
+sudo smartctl -t conveyance /dev/sda
+sudo smartctl -t long /dev/sda
+sudo smartctl -l selftest /dev/sda

@@ -1,0 +1,257 @@
+#these are the types of software you should be looking for in a software fire-engine.
+
+TYPES OF SOFTWARE IN-SCOPE
+anti-virus
+memory testers
+registry cleaners
+system monitors
+disk checkers
+disk defragmenters
+backup software
+disk cleaners
+data recovery
+
+#these are the category pages, they contain links to software
+
+LINK										CHECKED?		NOTES:
+https://en.wikipedia.org/wiki/Utility_software					Y				Gave list of types of software for fire engine
+https://en.wikipedia.org/wiki/Antivirus_software				Y				Gave link to comparison of antivirus softwares # See infobox "Antivirus software">"Products">"Desktop, server"
+https://en.wikipedia.org/wiki/Comparison_of_antivirus_software			Y
+https://en.wikipedia.org/wiki/Category:Spyware_removal				Y
+https://en.wikipedia.org/wiki/Category:Free_antivirus_software			Y
+https://en.wikipedia.org/wiki/Category:Free_security_software			Y
+https://en.wikipedia.org/wiki/Vulnerability_scanner				Y
+https://en.wikipedia.org/wiki/List_of_defragmentation_software			Y
+https://en.wikipedia.org/wiki/Data_recovery					Y
+https://en.wikipedia.org/wiki/List_of_backup_software				#not including
+https://en.wikipedia.org/wiki/System_monitor					Y
+https://en.wikipedia.org/wiki/Category:Windows_security_software		Y
+https://en.wikipedia.org/wiki/Category:Computer_security_software		Y
+https://en.wikipedia.org/wiki/Category:Digital_forensics_software		Y
+https://en.wikipedia.org/wiki/List_of_digital_forensics_tools			Y
+https://en.wikipedia.org/wiki/Category:Computer_forensics			Y
+https://en.wikipedia.org/wiki/Category:Linux_security_software			Y
+https://en.wikipedia.org/wiki/Category:Unix_security_software			Y
+https://en.wikipedia.org/wiki/Category:Unix_security-related_software		Y
+https://en.wikipedia.org/wiki/Category:Rootkit_detection_software		Y
+https://en.wikipedia.org/wiki/Category:MacOS_security_software			#not including
+https://en.wikipedia.org/wiki/Category:Spyware_removal				Y
+https://en.wikipedia.org/wiki/Category:Computer_security_software_stubs		Y
+https://en.wikipedia.org/wiki/Category:Computer_system_optimization_software	Y
+
+#that need to be put in the following table
+
+SOFTWARE NAME:				WIKI PAGE:							SITE:								PLATFORM:
+
+WINE - TO CHECK
+
+
+
+LINUX - WORKING
+https://github.com/malicialab/avclass
+https://github.com/jesparza/peepdf
+https://github.com/mandiant/flare-floss
+https://github.com/jzadeh/aktaion2
+https://pypi.org/project/chipsec/
+clamav													https://www.clamav.net/
+fsck					https://en.wikipedia.org/wiki/Fsck
+rkhunter												
+chkrootkit												
+lynis													https://cisofy.com/lynis/
+memtester
+TestDisk				https://en.wikipedia.org/wiki/TestDisk				https://www.cgsecurity.org/wiki/TestDisk
+PhotoRec				https://en.wikipedia.org/wiki/PhotoRec				https://www.cgsecurity.org/wiki/PhotoRec
+dvdisaster				https://en.wikipedia.org/wiki/Dvdisaster			https://dvdisaster.jcea.es/
+safecopy
+conky
+iftop
+nmon
+netdata
+monitorix
+
+WINE - WORKING
+SUPERAntiSpyware (Free edition)		https://en.wikipedia.org/wiki/SUPERAntiSpyware			https://www.superantispyware.com/
+HijackThis Portable			https://en.wikipedia.org/wiki/HijackThis			https://portableapps.com/apps/security/hijackthis-portable
+Spybot Search & Destroy			https://en.wikipedia.org/wiki/Spybot_Search_%26_Destroy		https://portableapps.com/apps/security/spybot_portable
+UltraDefrag				https://en.wikipedia.org/wiki/UltraDefrag			http://ultradefrag.net/		https://sourceforge.net/projects/ultradefrag/
+Contig (defragmentation utility)	https://en.wikipedia.org/wiki/Contig_(defragmentation_utility)
+Defraggler				https://en.wikipedia.org/wiki/Defraggler
+Recuva					https://en.wikipedia.org/wiki/Recuva				https://www.ccleaner.com/recuva
+Recovery Toolbox			https://en.wikipedia.org/wiki/Recovery_Toolbox			https://recoverytoolbox.com/
+IsoBuster				https://en.wikipedia.org/wiki/IsoBuster				https://www.isobuster.com/
+Glary Utilities												https://www.glarysoft.com/
+Easy PC Optimizer											https://www.easypcoptimizer.com/
+
+LINUX - TO PACKAGE
+Linux Malware Detect			https://en.wikipedia.org/wiki/Linux_Malware_Detect		
+Buck-security				https://en.wikipedia.org/wiki/Buck-security			http://buck-security.sourceforge.net/download.html
+
+WINE - NOT WORKING
+avast free antivirus			https://en.wikipedia.org/wiki/Avast_Antivirus			
+AVG antivirus FREE			https://en.wikipedia.org/wiki/AVG_(software)			
+Avira Antivirus FREE			https://en.wikipedia.org/wiki/Antivir				http://www.avira.com/
+Immunet					https://en.wikipedia.org/wiki/Immunet				https://www.immunet.com/index
+Comodo Internet Security		https://en.wikipedia.org/wiki/Comodo_Internet_Security		https://www.comodo.com/home/internet-security/free-internet-security.php
+NANO Antivirus				https://en.wikipedia.org/wiki/NANO_Antivirus			http://www.nano-av.com/
+MalwareBytes				https://en.wikipedia.org/wiki/Malwarebytes_(software)		http://malwarebytes.com/
+Ad-Aware				https://en.wikipedia.org/wiki/Ad-Aware				https://www.adaware.com/
+GMER					https://en.wikipedia.org/wiki/GMER				http://gmer.net/
+Zone Alarm				https://en.wikipedia.org/wiki/ZoneAlarm				https://www.zonealarm.com/
+HijackThis				https://en.wikipedia.org/wiki/HijackThis			http://sourceforge.net/projects/hjt
+IObit Malware Fighter (Free Edition)	https://en.wikipedia.org/wiki/IObit_Malware_Fighter		http://www.iobit.com/
+Malicious Software Removal Tool		https://en.wikipedia.org/wiki/Malicious_Software_Removal_Tool	https://support.microsoft.com/en-us/help/890830/remove-specific-prevalent-malware-with-windows-malicious-software-remo
+Vba32 Rescue				https://en.wikipedia.org/wiki/Vba32_AntiVirus			http://www.anti-virus.by/en/vba32rescue.shtml
+Vba32 Check				https://en.wikipedia.org/wiki/Vba32_AntiVirus			http://www.anti-virus.by/en/vba32check.shtml
+Vba32 AntiRootkit			https://en.wikipedia.org/wiki/Vba32_AntiVirus			http://www.anti-virus.by/en/vba32arkit.shtml
+Panda Security				https://en.wikipedia.org/wiki/Panda_Security			https://www.pandasecurity.com/en/homeusers/free-antivirus/
+360 Total Security			https://en.wikipedia.org/wiki/360_Total_Security		https://www.360totalsecurity.com/en/					Almost works, but scan aborts
+SpyHunter (Free edition)		https://en.wikipedia.org/wiki/SpyHunter_(software)		https://www.enigmasoftware.com/						Almost works, but says scanning is disabled
+Kapersky Virus Removal Tool		https://en.wikipedia.org/wiki/Kaspersky_Lab			https://www.kaspersky.com/downloads/thank-you/free-virus-removal-tool
+Kapersky TDSS Killer			https://en.wikipedia.org/wiki/Kaspersky_Lab			https://usa.kaspersky.com/downloads/tdsskiller
+Kapersky Anti Ransomware Tool		https://en.wikipedia.org/wiki/Kaspersky_Lab			https://www.kaspersky.com/anti-ransomware-tool
+McAffee Stinger				https://en.wikipedia.org/wiki/McAfee				https://www.mcafee.com/enterprise/en-gb/downloads/free-tools/stinger.html
+Microsoft Safety Scanner		https://en.wikipedia.org/wiki/Microsoft_Safety_Scanner		https://docs.microsoft.com/en-us/windows/security/threat-protection/intelligence/safety-scanner-download
+Emsisoft Emergency Kit Portable		<no wiki page>							https://www.emsisoft.com/en/home/emergencykit/
+ccleaner												https://www.ccleaner.com/ccleaner
+Auslogics Disk Defrag			https://en.wikipedia.org/wiki/Auslogics_Disk_Defrag
+PageDefrag				https://en.wikipedia.org/wiki/PageDefrag			https://docs.microsoft.com/en-us/sysinternals/downloads/pagedefrag
+JkDefrag				https://en.wikipedia.org/wiki/JkDefrag
+MyDefrag												http://www.mydefrag.net/
+Stellar Data Recovery			https://en.wikipedia.org/wiki/Stellar_Data_Recovery_for_Windows	https://www.stellarinfo.com/free-data-recovery.php
+Stellar Photo Recovery			https://en.wikipedia.org/wiki/Stellar_Photo_Recovery		https://www.stellarinfo.com/photo-recovery-software.php
+GPU-Z					https://en.wikipedia.org/wiki/GPU-Z				https://www.techpowerup.com/download/techpowerup-gpu-z
+open hardware monitor											https://openhardwaremonitor.org/
+CPU-Z					https://en.wikipedia.org/wiki/CPU-Z				https://www.cpuid.com/softwares/cpu-z.html
+AIDA64					https://en.wikipedia.org/wiki/AIDA64				https://www.aida64.com/downloads
+Process Explorer			https://en.wikipedia.org/wiki/Process_Explorer			https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+SpeedFan				https://en.wikipedia.org/wiki/SpeedFan				http://www.almico.com/speedfan.php
+IObit Advanced SystemCare	https://www.iobit.com/en/advancedsystemcarefree.php
+CleanMyPC	https://macpaw.com/cleanmypc
+Ashampoo WinOptimizer	https://www.ashampoo.com/en-us/winoptimizer-free
+SlimCleaner Free	No download link
+Razer Cortex		https://www.razer.com/cortex
+Auslogics BoostSpeed	https://en.wikipedia.org/wiki/Auslogics_BoostSpeed	https://www.auslogics.com/en/software/boost-speed/
+Iolo System Mechanic	https://www.iolo.com/landing/smfree/
+Wise Cleaner 365	https://www.wisecleaner.com/wise-care-365.html
+Wise Disk Cleaner	https://www.wisecleaner.com/wise-disk-cleaner.html
+FixmyPC			No Download Link
+PC TuneUp Maestro	https://www.compuclever.com/products/pc-tuneup-maestro/
+Avira PC Cleaner	https://www.avira.com/en/junk-cleaner
+Avira PC Optimizer	https://www.avira.com/en/free-optimizer
+CleanmgrPlus	https://github.com/builtbybel/CleanmgrPlus
+Privacy Eraser Free	http://www.cybertronsoft.com/products/privacy-eraser/
+System Ninja	https://singularlabs.com/software/system-ninja/
+Norton 360	No Download link
+TotalAV		A scam according to https://github.com/uBlockOrigin/uAssets/issues/9355
+BullGuard	No Download link
+SafeSoft PC Cleaner	https://safesoftpro.com/safesoft-pc-cleaner/
+Advanced System Optimizer	https://en.wikipedia.org/wiki/Advanced_System_Optimizer		https://www.systweak.com/advanced-system-optimizer
+
+NOT INCLUDED
+https://github.com/miriamxyra/EventList		I don't know how to build it
+https://en.wikipedia.org/wiki/Semgrep		For code analysis
+
+RunScanner				https://en.wikipedia.org/wiki/RunScanner			http://www.runscanner.net/						Dead link
+Microsoft Defender			https://en.wikipedia.org/wiki/Microsoft_Defender		https://www.microsoft.com/en-us/windows/windows-defender/		Shipped with later versions of OS
+Spybot Search & Destroy			https://en.wikipedia.org/wiki/Spybot_Search_%26_Destroy		https://www.safer-networking.org/					Couldn't find free version
+Kapersky				https://en.wikipedia.org/wiki/Kaspersky_Anti-Virus		http://www.kaspersky.com/kaspersky_anti-virus				Looks like you have to pay
+Windows Defender			https://en.wikipedia.org/wiki/Windows_Defender												Same as Microsoft Defender
+Comodo Antivirus			https://en.wikipedia.org/wiki/Comodo_Antivirus												Same as comodo internet security
+Bitdefender Antivirus Free		https://en.wikipedia.org/wiki/BitDefender			https://www.bitdefender.com/						Trialware
+SpywareBlaster				https://en.wikipedia.org/wiki/SpywareBlaster			http://www.brightfort.com/spywareblaster.html				Works in wine, but only does active scanning
+Memtest86+												http://www.memtest.org/							This is a mini os
+unhide.rb																					Shows running processes only
+snort													https://www.snort.org/
+CHKDSK					https://en.wikipedia.org/wiki/CHKDSK													#Bundle ReactOS or FreeDos's version. #cant find download
+cleanmgr.exe																					#Check ReactOS #cant find download
+Windows Installer CleanUp		https://en.wikipedia.org/wiki/Windows_Installer_CleanUp_Utility										is no more
+AVG PC TuneUp				https://en.wikipedia.org/wiki/AVG_PC_TuneUp			http://avg.com/avg-pctuneup						trialware
+Norton Utilities											http://symantec.com/norton/norton-utilities				not freeware
+w3af					https://en.wikipedia.org/wiki/W3af													web application pen-testing
+Digital Forensics Framework		https://en.wikipedia.org/wiki/Digital_Forensics_Framework										is no more
+OpenVAS					https://en.wikipedia.org/wiki/OpenVAS													network vunerability scanning
+Ophcrack				https://en.wikipedia.org/wiki/Ophcrack													password cracking
+Nessus					https://en.wikipedia.org/wiki/Nessus_(software)												I think it's paid-for
+Nikto					https://en.wikipedia.org/wiki/Nikto_(vulnerability_scanner)										network vunerability scanning
+FortiClient				https://en.wikipedia.org/wiki/Fortinet													64 bit only
+The Sleuth Kit				https://en.wikipedia.org/wiki/The_Sleuth_Kit												the tools don't look all that useful to me
+BleachBit												https://www.bleachbit.org/						can't select rootfs
+AVG PC TuneUp				https://en.wikipedia.org/wiki/TuneUp_Utilities			http://avg.com/avg-pctuneup						trialware
+Hetman Partition Recovery		https://en.wikipedia.org/wiki/Hetman_Partition_Recovery		http://hetmanrecovery.com/						no payment is required until you decide to restore the available data
+Motherboard Monitor			https://en.wikipedia.org/wiki/Motherboard_Monitor											couldn't find good download link
+Samurize				https://en.wikipedia.org/wiki/Samurize				http://samurize.com/							website down
+https://en.wikipedia.org/wiki/ESET_NOD32																	trialware
+mks_vir					https://en.wikipedia.org/wiki/Mks_vir				https://mks-vir.pl/							30 day trial
+PC Booster	https://www.pc-booster.net/download/index.html															dead links
+
+
+__________THESE HAVE BEEN CHECKED_____
+
+http://devicedoctor.com/
+http://www.ezpcfix.net/
+https://www.glarysoft.com/registry-repair/
+https://hddscan.com/
+http://mbrwizard.com/#				paid for software
+http://www.cdslow.org.ru/en/ntpwedit/
+https://www.nirsoft.net/utils/uninstall_view.html
+https://www.nirsoft.net/utils/what_run_in_startup.html
+https://www.nirsoft.net/utils/device_manager_view.html
+https://www.cpuid.com/softwares/pc-wizard.html		no files availiable
+https://en.wikipedia.org/wiki/Revo_Uninstaller
+https://learn.microsoft.com/en-us/sysinternals/downloads/
+https://systemexplorer.net/
+https://github.com/hellzerg/optimizer
+https://github.com/builtbybel/burnbytes
+	https://github.com/thebookisclosed/Comet
+
+
+
+https://github.com/749/UltraDefrag4Linux
+
+#==OMITTED==
+
+Cuckoo Sandbox #is for runtime analysis
+
+binproxy #for tcp/ip
+
+panoptic #network
+
+https://github.com/codexgigassys/ #looks a bit heavy
+
+FIRMWARE ANALYSIS TOOLKIT (FAT) #not really suited for software fire-engine
+
+https://github.com/YalcinYolalan/WSSAT #for web
+
+CERTITUDE - AN OPEN-SOURCE AND AGENTLESS COMPROMISE ASSESSMENT TOOL #network based
+
+SECCUBUS vunerability assessment #network-based
+
+Dependency-Check #nah
+
+Mandiant Redline #runtime based
+
+Registry Inspector Forensics (RIF) #can't find the link
+
+vscan Vulnerability Management System #network based
+
+CHIPSEC platform security
+
+Openioc_Scan # plugin for volatility framework which is runtime based
+
+log-md #looks like runtime based
+
+https://github.com/aboutsecurity/rastrea2r #not for me
+
+Threatscanner endpoint IOC scanner #can't find a good link
+
+AARDVARK AND REPOKID #web based
+
+bingrep #written in rust and only has support for dbg PEs
+
+Rattler dll identification #exploits
+
+ThreatResponse aws #not for me
+
+Fideliscyber yalda github #has database have to write to so not so good for me.
+
+rudra uses python2 not python3 so is no good for me.

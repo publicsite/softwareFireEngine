@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Control Panel
+Exec=wine-stable control
+Type=Application
+

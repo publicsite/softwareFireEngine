@@ -1,0 +1,51 @@
+#!/bin/sh
+
+wikipage="https://en.wikipedia.org/wiki/McAfee"
+homepage="https://portableapps.com/apps/security/mcafee-stinger-portable"
+checksum=""
+
+filename="McAfeeStingerPortable_12.2.0.358_English_online.paf"
+extension=".exe"
+nut="https://portableapps.com/redirect/?a=McAfeeStingerPortable&s=s&d=pa&f=${filename}${extension}"
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	mv "${myBuildExtractDest}/"*"${filename}${extension}" "${myBuildExtractDest}/${filename}${extension}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+
+	cp "${myBuildExtractDest}/${filename}${extension}" "${1}"
+
+	cd "${1}"
+
+	wine ${filename}${extension}
+
+	rm ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0" "$2"
+fi

@@ -1,0 +1,111 @@
+#!/bin/sh
+
+wikipage=""
+homepage="https://www.pc-booster.net/download/index.html"
+checksum=""
+
+filename="FreePCBooster"
+filename2="PCBoosterFreeDiskCleaner"
+filename3="PCBoosterFreeRegistryCleaner"
+filename4="PCBoosterFreeDuplicatesRemover"
+filename5="PCBoosterFreeBrowserCleaner"
+filename6="PCBoosterFreeEmptyFolderRemover"
+filename7="PCBoosterFreeShortcutRemover"
+filename8="PCBoosterFreeStartupManager"
+filename9="PCBoosterFreeDriverBackup"
+filename10="PCBoosterFreeFileRecovery"
+filename11="PCBoosterFreeFileSplitterJoiner"
+filename12="PCBoosterFreeAntiSpyware"
+filename13="PCBoosterFreeUninstaller"
+filename14="PCBoosterFreeShortcutRemover"
+extension=".exe"
+nut="http://www.pc-booster.net/${filename}${extension}"
+nut2="http://www.pc-booster.net/${filename2}${extension}"
+nut3="http://www.pc-booster.net/${filename3}${extension}"
+nut4="http://www.pc-booster.net/${filename4}${extension}"
+nut5="http://www.pc-booster.net/${filename5}${extension}"
+nut6="http://www.pc-booster.net/${filename6}${extension}"
+nut7="http://www.pc-booster.net/${filename7}${extension}"
+nut8="http://www.pc-booster.net/${filename8}${extension}"
+nut9="http://www.pc-booster.net/${filename9}${extension}"
+nut10="http://www.pc-booster.net/${filename10}${extension}"
+nut11="http://www.pc-booster.net/${filename11}${extension}"
+nut12="http://www.pc-booster.net/${filename12}${extension}"
+nut13="http://www.pc-booster.net/${filename13}${extension}"
+nut14="http://www.pc-booster.net/${filename14}${extension}"
+
+sumUrl=""
+
+#functions
+
+do_get(){
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut2}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut3}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut4}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut5}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut6}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut7}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut8}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut9}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut10}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut11}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut12}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut13}" "${myBuildExtractDest}"
+	sleep 1
+	"${myBuildHelpersDir}"/myBuildGet.sh "${nut14}" "${myBuildExtractDest}"
+	return "$?"
+}
+
+do_extract(){
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+	wine ${filename2}${extension}
+	wine ${filename3}${extension}
+	wine ${filename4}${extension}
+	wine ${filename5}${extension}
+	wine ${filename6}${extension}
+	wine ${filename7}${extension}
+	wine ${filename8}${extension}
+	wine ${filename9}${extension}
+	wine ${filename10}${extension}
+	wine ${filename11}${extension}
+	wine ${filename12}${extension}
+	wine ${filename13}${extension}
+	wine ${filename14}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

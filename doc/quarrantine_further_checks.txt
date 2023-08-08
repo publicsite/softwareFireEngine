@@ -1,0 +1,22 @@
+There are several ways to confirm if a suspect file in quarrantine is malicious.
+Here are some ways ...
+
+1)
+	Run
+		/root/Desktop/doc/check-circl.sh <path to quarrantine>
+	To check files in folder or a single file for viruses
+
+2)	Then run the command
+		VirusTotalUploader
+	And upload the suspect files to have them checked for viruses.
+
+3)	Then visit
+		https://virusscan.jotti.org
+	And upload suspect files. You can upload 5 at a time.
+
+4)	Then upload a single file to
+		https://metadefender.opswat.com/#!/
+	This checks against multiple engines
+
+5)	Finally upload the file to
+		https://www.fortiguard.com/faq/onlinescanner

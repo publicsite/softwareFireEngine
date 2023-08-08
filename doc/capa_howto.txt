@@ -1,0 +1,5 @@
+run
+
+	/capa/run-capa.sh <the file>
+
+to check capabilities of an executable

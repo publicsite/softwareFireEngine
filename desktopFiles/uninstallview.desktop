@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=UninstallView
+Exec=wine-stable /root/.wine/drive_c/UninstallView.exe
+Type=Application
+

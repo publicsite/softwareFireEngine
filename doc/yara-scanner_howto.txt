@@ -1,0 +1,11 @@
+Run ...
+	fdisk -l
+
+To list drive, then run ...
+
+	mkdir /root/mountpoint
+	mount <drive> /root/mountpoint
+
+Then run ...
+
+	scan -d /yara/run-yara.sh /root/mountpoint

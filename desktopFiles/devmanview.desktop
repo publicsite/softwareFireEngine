@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=DevManView
+Exec=wine-stable /root/.wine/drive_c/DevManView.exe
+Type=Application
+

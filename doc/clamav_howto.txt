@@ -1,0 +1,20 @@
+Run ...
+
+	freshclam
+
+... to update the virus database ...
+
+Then run ...
+
+	fdisk -l
+
+To list drive, then run ...
+
+	mkdir /root/mountpoint
+	mount <drive> /root/mountpoint
+
+Then run ...
+
+	mkdir /root/infected
+
+	clamscan -r -i --move=/root/infected -l /root/scanresults.txt /root/mountpoint && umount /root/mountpoint

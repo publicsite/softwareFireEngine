@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Contig
+Exec=xfce4-terminal -H -e "sh -c \"echo wine-stable /root/.wine/drive_c/Contig.exe; wine-stable /root/.wine/drive_c/Contig.exe; sh\""
+Type=Application
+

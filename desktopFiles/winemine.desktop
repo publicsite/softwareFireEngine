@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=winemine
+Exec=wine-stable winemine
+Type=Application
+

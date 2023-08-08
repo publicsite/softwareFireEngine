@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=taskmgr
+Exec=wine-stable taskmgr
+Type=Application
+

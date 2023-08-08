@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=regedit
+Exec=wine-stable regedit
+Type=Application
+

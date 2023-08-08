@@ -1,0 +1,6 @@
+Run ...
+
+	mkdir /root/mountpoint
+	mount <drive> /root/mountpoint
+	lynis --rootdir /root/mountpoint audit system
+	umount /root/mountpoint

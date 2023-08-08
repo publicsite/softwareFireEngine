@@ -1,0 +1,48 @@
+#!/bin/sh
+
+wikipage=""
+homepage="http://www.ezpcfix.net/"
+checksum=""
+
+filename="EZPCFix-1-0-0-16"
+extension=".exe"
+nut="http://ezpcfix.net/download.aspx?dload/1-0-0-16/${filename}${extension}"
+nut2="http://ezpcfix.net/download.aspx?dload/1-0-0-16/Plugin.inf"
+sumUrl=""
+
+#functions
+
+do_get(){
+	wget "${nut}" -O "${myBuildExtractDest}/${filename}${extension}"
+	wget "${nut2}" -O "${myBuildExtractDest}/Plugin.inf"
+	return "$?"
+}
+
+do_extract(){
+	cd "${myBuildExtractDest}"
+	return 1
+}
+
+do_build(){
+#here you put commands like configure and make
+return 1
+}
+
+do_install(){
+	cd "${myBuildExtractDest}"
+
+	wine ${filename}${extension}
+
+	return "$?"
+}
+
+do_package(){
+#here you package the files
+echo "package!"
+return "$?"
+}
+
+if [ "$myBuildDoNotCallMainFunction" != "1" ]; then
+#main code goes here
+"${myBuildHelpersDir}"/argumentHelper.sh "$1" "$0"
+fi

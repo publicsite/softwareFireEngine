@@ -1,0 +1,6 @@
+Run ...
+
+	mkdir /root/mountpoint
+	mount <drive> /root/mountpoint
+	chkrootkit -q -r /root/mountpoint
+	umount /root/mountpoint
