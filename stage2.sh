@@ -1,6 +1,11 @@
 #!/bin/sh
 #stage2 :- debootstraps a vanilla rootfs for the appropriate architecture
 
+country="gb."
+
+THEMIRROR="http://${country}deb.devuan.org/merged"
+sed -i "s#deb.devuan.org#${country}deb.devuan.org#g" /etc/apt/sources.list
+
 #enter directory containing this script
 cd $(dirname $(realpath $0))
 
@@ -28,8 +33,6 @@ chmod -Rv 700 /var/cache/apt/archives/partial/
 
 chown -Rv devuan:devuan /var/cache/apt/archives/partial/
 
-THEMIRROR="http://pkgmaster.devuan.org/merged"
-
 apt-get update
 
 mkdir "${PWD}/rootfs"
@@ -41,10 +44,10 @@ apt-get install -m -y ntfs-3g mono-xbuild
 #for efilinux
 apt-get -m -y install gnu-efi
 
-debootstrap --arch=${THEARCH} --variant=minbase --components=main,contrib,non-free --include=ifupdown testing "${PWD}/rootfs" "${THEMIRROR}"
+debootstrap --arch=${THEARCH} --variant=minbase --components=main,contrib,non-free --include=ifupdown unstable "${PWD}/rootfs" "${THEMIRROR}"
 
-printf "deb %s testing main contrib non-free-firmware\n" "${THEMIRROR}" > rootfs/etc/apt/sources.list
-printf "deb-src %s testing main contrib non-free-firmware\n" "${THEMIRROR}" >> rootfs/etc/apt/sources.list
+printf "deb %s unstable main contrib non-free-firmware\n" "${THEMIRROR}" > rootfs/etc/apt/sources.list
+printf "deb-src %s unstable main contrib non-free-firmware\n" "${THEMIRROR}" >> rootfs/etc/apt/sources.list
 
 printf "software-fireengine\n" > "rootfs/etc/hostname"
 chmod 644 "rootfs/etc/hostname"
@@ -64,7 +67,10 @@ chown root:root "rootfs/etc/hosts"
 	apt-get -m -y install build-essential qtchooser qt5-default libjansson-dev libcurl4-openssl-dev git zlib1g-dev
 	apt-get -m -y install automake autoconf libtool libjansson-dev libcurl4-openssl-dev
 	apt-get -m -y install make g++ qt5-qmake qtbase5-dev qtchooser zlib1g-dev libqt5gui5
-	aapt-get -m -y install libcvtapi-dev
+	apt-get -m -y install libcvtapi-dev
+
+
+#sed -i "s#deb.devuan.org#${country}deb.devuan.org#g" ${PWD}/rootfs/etc/apt/sources.list
 
 #unmount stuff
 umount /proc

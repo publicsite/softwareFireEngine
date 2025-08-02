@@ -14,7 +14,7 @@ It can fit on Blu-Ray and USB. The ISO is too big for DVD or CD.
 == To generate the ISO, from a Linux distro... ==
 
 cd to the directory containing the sources and run
- ./stage1.sh i386 linux-image-686
+ ./stage1.sh amd64 linux-image-amd64
 
 this will take a long time and requires an internet connection
 

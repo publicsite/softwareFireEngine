@@ -21,7 +21,7 @@ do_get(){
 	git clone https://github.com/zourick/yrepo
 	git clone https://github.com/AlienVault-Labs/AlienVaultLabs
 	wget https://gist.githubusercontent.com/pedramamini/c586a151a978f971b70412ca4485c491/raw/68ba7792699177c033c673c7ffccfa7a0ed5ce47/XProtect.yara
-	git clone https://github.com/bwall/bamfdetect
+	#git clone https://github.com/bwall/bamfdetect
 	git clone https://github.com/airbnb/binaryalert
 	git clone https://github.com/codewatchorg/Burp-Yara-Rules
 	git clone https://github.com/kevoreilly/CAPEv2
@@ -34,7 +34,7 @@ do_get(){
 	cd ..
 	git clone https://github.com/DidierStevens/DidierStevensSuite
 	git clone https://github.com/eset/malware-ioc
-	git clone https://github.com/fideliscyber/indicators
+	#git clone https://github.com/fideliscyber/indicators
 	git clone https://github.com/mandiant/red_team_tool_countermeasures
 	git clone https://github.com/Neo23x0/signature-base
 	wget https://gist.githubusercontent.com/Neo23x0/f1bb645a4f715cb499150c5a14d82b44/raw/d621fcfd496d03dca78f9ff390cad88684139d64/iddqd.yar
@@ -70,10 +70,10 @@ do_get(){
 	git clone https://github.com/malice-plugins/yara
 	git clone https://github.com/malpedia/signator-rules
 	git clone https://github.com/advanced-threat-research/IOCs
-	mkdir prolsen
-	cd prolsen
-	git clone https://github.com/prolsen/yara-rules
-	cd ..
+	#mkdir prolsen
+	#cd prolsen
+	#git clone https://github.com/prolsen/yara-rules
+	#cd ..
 	git clone https://github.com/tylabs/qs_old
 	git clone https://github.com/rastrea2r/rastrea2r
 	git clone https://github.com/reversinglabs/reversinglabs-yara-rules

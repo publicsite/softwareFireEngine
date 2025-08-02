@@ -23,8 +23,8 @@ cd $(dirname $(realpath $0))
 
 thepwd="${PWD}"
 
-ISONAME="devuan_chimaera_4.0.3_i386_minimal-live.iso"
-wget "http://mirror.alpix.eu/devuan/devuan_chimaera/minimal-live/${ISONAME}"
+ISONAME="devuan_excalibur_6.0-preview-2025-05-22_1850_amd64_minimal-live.iso"
+wget "http://mirror.alpix.eu/devuan/devuan_excalibur/minimal-live/${ISONAME}"
 mkdir "${thepwd}/mountpoint"
 sudo mount -o loop "${ISONAME}" "${thepwd}/mountpoint"
 cp -a "${thepwd}/mountpoint/live/filesystem.squashfs" .
@@ -39,6 +39,8 @@ sudo mkdir "${thepwd}/mountpoint/workdir"
 sudo cp -a stage2.sh "${thepwd}/mountpoint/workdir/"
 chmod +x "${thepwd}/mountpoint/workdir/stage2.sh"
 sudo chroot "${thepwd}/mountpoint" /workdir/stage2.sh "${THEARCH}"
+#create /etc/resolv.conf for inner rootfs
+cat /etc/resolv.conf | sudo tee "${thepwd}/mountpoint/workdir/rootfs/etc/resolv.conf"
 
 #copy build scripts to the outer rootfs
 sudo cp -a "${thepwd}/myBuildsBuild" "${thepwd}/mountpoint/workdir"
@@ -108,9 +110,6 @@ sudo chmod a+r "${thepwd}/mountpoint/workdir/rootfs/software_fire_engine.png"
 ##sudo chmod +x "rootfs/usr/bin/start-wine-iexplore.sh"
 ##sudo chroot rootfs update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/start-wine-iexplore.sh 500
 ##sudo chroot rootfs update-alternatives --set x-www-browser /usr/bin/start-wine-iexplore.sh
-
-#create /etc/resolv.conf for inner rootfs
-cat /etc/resolv.conf | sudo tee "${thepwd}/mountpoint/workdir/rootfs/etc/resolv.conf"
 
 #copy build scripts to inner rootfs
 sudo cp -a "${thepwd}/myBuildsHost" "${thepwd}/mountpoint/workdir/rootfs/workdir/"

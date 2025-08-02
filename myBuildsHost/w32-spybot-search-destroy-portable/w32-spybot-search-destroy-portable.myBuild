@@ -4,9 +4,9 @@ wikipage="https://en.wikipedia.org/wiki/Spybot_search_and_destroy"
 homepage="https://portableapps.com/apps/security/spybot_portable"
 checksum=""
 
-filename="SpybotPortable_2.9.82.paf"
+filename="SpybotPortable_2.9.85.5.paf"
 extension=".exe"
-nut="https://portableapps.com/redirect/?a=SpybotPortable&s=s&d=pa&f=${filename}${extension}"
+nut="https://portableapps.com/redir2/?a=SpybotPortable&s=s&d=pa&f=${filename}${extension}"
 sumUrl=""
 
 #functions

@@ -109,7 +109,6 @@ xfce4-power-manager-plugins \
 dns323-firmware-tools \
 firmware-linux-free \
 grub-firmware-qemu \
-hdmi2usb-fx2-firmware \
 sigrok-firmware-fx2lafw \
 amd64-microcode \
 bluez-firmware \
@@ -140,6 +139,7 @@ intel-microcode \
 tzdata
 
 apt-get -m -y install wine yara chkrootkit clamav clamdscan lynis testdisk safecopy ca-certificates epiphany-browser smartmontools gpart ffmpeg
+dpkg --add-architecture i386 && apt-get update && apt-get install wine32:i386
 
 apt-get -m -y mono-runtime
 
@@ -217,14 +217,14 @@ if [ -f "rootfs/usr/share/X11/xorg.conf.d/40-libinput.conf" ]; then
 	IFS="$OLD_IFS"
 fi
 
-apt-get clean
-
 cd /workdir
 
 /workdir/getEquiptmentHost.sh /workdir
 /workdir/installEquiptmentHost.sh /workdir
 
 freshclam
+
+apt-get clean
 
 rm /etc/resolv.conf
 rm -rf /tmp/*

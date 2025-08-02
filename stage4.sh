@@ -7,7 +7,7 @@ mount none -t sysfs /sys
 mkdir -p /dev/pts
 mount none -t devpts /dev/pts
 
-THELABEL="DEVUANCUSTOM"
+THELABEL="SOFTWAREFIREENGINE"
 
 #enter directory containing this script
 cd $(dirname $(realpath $0))

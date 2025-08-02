@@ -6,7 +6,7 @@ checksum=""
 
 filename="SUPERAntiSpyware"
 extension=".exe"
-nut="https://securedownloads.superantispyware.com/${filename}${extension}"
+nut="https://secure.superantispyware.com/${filename}${extension}"
 sumUrl=""
 
 #functions

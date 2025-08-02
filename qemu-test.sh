@@ -1,2 +1,2 @@
 #!/bin/sh
-qemu-system-i386 -m 4G -enable-kvm -cdrom mountpoint/workdir/software-fireengine-i*8*.iso
+qemu-system-x86_64 -m 4G -enable-kvm -cdrom mountpoint/workdir/software-fireengine-*.iso

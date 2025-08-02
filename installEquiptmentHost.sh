@@ -33,14 +33,15 @@ export PREFIX='/usr' #the location to install to
 
 export DISPLAY=:0.0
 export LIBGL_ALWAYS_SOFTWARE=1
+export XDG_RUNTIME_DIR="$HOME/.local/share"
 
 ##These installed OK in wine and kind-of work
-"${myBuildHome}"/myBuildsHost/w32-superantispyware/w32-superantispyware.myBuild install
 "${myBuildHome}"/myBuildsHost/w32-spybot-search-destroy-portable/w32-spybot-search-destroy-portable.myBuild install /root/.wine/drive_c/
 "${myBuildHome}"/myBuildsHost/w32-full-event-log-view/w32-full-event-log-view.myBuild install
 "${myBuildHome}"/myBuildsHost/w32-nirsoft-uninstallview/w32-nirsoft-uninstallview.myBuild install /root/.wine/drive_c/
 "${myBuildHome}"/myBuildsHost/w32-nirsoft-whatinstartup/w32-nirsoft-whatinstartup.myBuild install /root/.wine/drive_c/
 "${myBuildHome}"/myBuildsHost/w32-nirsoft-devmanview/w32-nirsoft-devmanview.myBuild install /root/.wine/drive_c/
+"${myBuildHome}"/myBuildsHost/w32-superantispyware/w32-superantispyware.myBuild install
 
 ###THESE WORK BUT WERE DROPPED IN V2
 ##"${myBuildHome}"/myBuildsHost/w32-spyware-blaster/w32-spyware-blaster.myBuild install

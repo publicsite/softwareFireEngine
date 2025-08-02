@@ -1,4 +1,4 @@
-#!/bin/sh
+f#!/bin/sh
 
 wikipage="https://en.wikipedia.org/wiki/Fortinet"
 homepage="https://www.fortinet.com/"
@@ -37,7 +37,7 @@ do_build(){
 
 	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${myBuildExtractDest}/c-vtapi/lib/.libs" qtchooser -run-tool=qmake -qt=5
 
-	sed -i "s#-I.#-I. -I${myBuildExtractDest}/c-vtapi/lib -I/usr/include/i386-linux-gnu/qt5 -I/usr/include/i386-linux-gnu/qt5/QtGui -I/usr/include/i386-linux-gnu/qt5/QtCore -I/usr/include/i386-linux-gnu/qt5/QtWidgets -I/usr/include/i386-linux-gnu/qt5/QtNetwork#g" Makefile
+	sed -i "s#-I.#-I. -I${myBuildExtractDest}/c-vtapi/lib -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork#g" Makefile
 
 	sed -i "s#\$(SUBLIBS)#\$(SUBLIBS) -L${myBuildExtractDest}/c-vtapi/lib/.libs#g" Makefile
 
