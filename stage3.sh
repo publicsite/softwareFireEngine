@@ -104,8 +104,7 @@ less \
 xfce4-session \
 connman \
 connman-gtk \
-xfce4-power-manager \
-xfce4-power-manager-plugins \
+cbatticon \
 dns323-firmware-tools \
 firmware-linux-free \
 grub-firmware-qemu \
@@ -136,7 +135,8 @@ firmware-siano \
 firmware-ti-connectivity \
 firmware-zd1211 \
 intel-microcode \
-tzdata
+tzdata \
+ntpsec
 
 apt-get -m -y install wine yara chkrootkit clamav clamdscan lynis testdisk safecopy ca-certificates epiphany-browser smartmontools gpart ffmpeg
 dpkg --add-architecture i386 && apt-get update && apt-get install wine32:i386
