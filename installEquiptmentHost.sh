@@ -1,4 +1,7 @@
 #!/bin/sh
+OLD_UMASK="$(umask)"
+umask 0022
+
 #myBuild options
 
 #environment variables
@@ -137,3 +140,5 @@ export XDG_RUNTIME_DIR="$HOME/.local/share"
 ##"${myBuildHome}"/myBuildsHost/w32-devicedoctor/w32-devicedoctor.myBuild install
 ##"${myBuildHome}"/myBuildsHost/w32-ez-pc-fix/w32-ez-pc-fix.myBuild install
 ##"${myBuildHome}"/myBuildsHost/w32-sysinternals/w32-sysinternals.myBuild install
+
+umask "${OLD_UMASK}"
