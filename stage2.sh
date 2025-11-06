@@ -1,6 +1,9 @@
 #!/bin/sh
 #stage2 :- debootstraps a vanilla rootfs for the appropriate architecture
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 country="gb."
 
 THEMIRROR="http://${country}deb.devuan.org/merged"
@@ -76,3 +79,5 @@ chown root:root "rootfs/etc/hosts"
 umount /proc
 umount /sys
 umount /dev/pts
+
+umask "${OLD_UMASK}"
