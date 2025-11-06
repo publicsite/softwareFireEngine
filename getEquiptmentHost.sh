@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 #myBuild options
 
 #environment variables
@@ -169,3 +173,5 @@ export PREFIX='/usr' #the location to install to
 ##"${myBuildHome}"/myBuildsHost/w32-comet-bin/w32-comet-bin.myBuild extract
 ##"${myBuildHome}"/myBuildsHost/w32-hellzerg-optimizer-bin/w32-hellzerg-optimizer-bin.myBuild get
 ##"${myBuildHome}"/myBuildsBuild/w32-hellzerg-optimizer/w32-hellzerg-optimizer.myBuild extract
+
+umask "${OLD_UMASK}"
