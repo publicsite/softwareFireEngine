@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 #myBuild options
 
 #environment variables
@@ -48,3 +52,5 @@ export PREFIX='/usr' #the location to install to
 ##"${myBuildHome}"/myBuildsBuild/apt-hunter/apt-hunter.myBuild get /workdir/rootfs
 ##"${myBuildHome}"/myBuildsBuild/ultradefrag-linux/ultradefrag-linux.myBuild get
 ##"${myBuildHome}"/myBuildsBuild/ultradefrag-linux/ultradefrag-linux.myBuild extract
+
+umask "${OLD_UMASK}"
