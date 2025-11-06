@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 #myBuild options
 
 #environment variables
@@ -49,3 +53,5 @@ export LIBGL_ALWAYS_SOFTWARE=1
 ###This installation is broken
 ##"${myBuildHome}"/myBuildsBuild/apt-hunter/apt-hunter.myBuild install /workdir/rootfs
 ##"${myBuildHome}"/myBuildsBuild/ultradefrag-linux/ultradefrag-linux.myBuild build
+
+umask "${OLD_UMASK}"
