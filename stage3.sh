@@ -227,6 +227,9 @@ cd /workdir
 
 freshclam
 
+sudo chmod 750 /etc/sudoers.d
+sudo chmod 0440 /etc/sudoers
+
 apt-get clean
 
 rm /etc/resolv.conf
