@@ -59,9 +59,11 @@ obconf \
 xfce4-panel \
 xfce4-terminal \
 xfce4-whiskermenu-plugin \
+xfce-polkit \
+xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins \
 thunar \
 thunar-archive-plugin \
-xdm \
+lightdm \
 mousepad \
 file-roller \
 gparted \
@@ -107,7 +109,6 @@ less \
 xfce4-session \
 connman \
 connman-gtk \
-cbatticon \
 dns323-firmware-tools \
 firmware-linux-free \
 grub-firmware-qemu \
