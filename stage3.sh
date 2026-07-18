@@ -47,9 +47,9 @@ apt-get -y update && apt-get -y upgrade
 
 apt-get -m -y install task-laptop \
 task-english \
-sysvinit-core \
-sysv-rc \
-live-config-sysvinit \
+systemd \
+systemd-resolvd \
+default-logind \
 xdg-utils \
 xorg \
 xserver-xorg-input-all \
@@ -63,7 +63,7 @@ xfce-polkit \
 xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins \
 thunar \
 thunar-archive-plugin \
-lightdm \
+xdm \
 mousepad \
 file-roller \
 gparted \
@@ -131,7 +131,6 @@ firmware-misc-nonfree \
 firmware-myricom \
 firmware-netronome \
 firmware-netxen \
-firmware-qcom-media \
 firmware-qlogic \
 firmware-realtek \
 firmware-samsung \
